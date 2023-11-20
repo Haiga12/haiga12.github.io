@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homestay Hub - Homepage</title>
+    <link rel="stylesheet" href="{% static 'propertylistings/styles/style.css'%}">
+</head>
+<body>
+    <header>
+        <nav><h1 class="logo"><a href="/propertylistings">HomestayHub</a></h1></nav>
+    </header>
+
+    <main class="property-listings">
+            {% for propertylistings in propertylistings %}
+            <article>
+                <div class="property">
+                    <img class="property-img" src="{{propertylistings.mainImage}}" alt="Property">
+                    <div class="property-elements">
+                        <div class="property-title">{{propertylistings.name}}</div>
+                        <div class="property-price">{{propertylistings.price}}</div>
+                        <a href="{{propertylistings.slug}}" class="property-button">More Info</a>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+    </main>
+</body>
+</html>

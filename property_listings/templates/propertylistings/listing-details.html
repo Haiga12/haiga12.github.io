@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homestay Hub - Homepage</title>
+    <link rel="stylesheet" href="{% static 'propertylistings/styles/listingdetails.css'%}">
+</head>
+
+<body>
+    <header>
+        <nav><h1 class="logo"><a href="/propertylistings">HomestayHub</a></h1></nav>
+        <h2>{{listing.name}}</h2>
+    </header>
+
+    <main>
+        <article>
+            <img class="property-img" src="{{listing.mainImage}}" alt="">
+            <section class="property-details">
+                <div><h2>Title:</h2>{{listing.name}}</div>
+                <div><h2>Type:</h2>{{listing.type}}</div>
+                <div><h2>Location:</h2> {{listing.location}}</div>
+                <div><h2>Price:</h2>{{listing.price}}</div>
+                <div><h2>Max Guests:</h2>{{listing.maxGuests}}</div>
+                <div><img class="property-img" src="{{listing.secondaryImage}}" alt=""></div>
+                <div class="property-description"><h2>Description:</h2> {{listing.description}}</div>
+                <div><h2>Amenities:</h2>Bedrooms: {{listing.bedrooms}} &nbsp; &nbsp; &nbsp; Bathrooms: {{listing.bathrooms}}</div>
+                <div></div>
+                <div></div>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>
